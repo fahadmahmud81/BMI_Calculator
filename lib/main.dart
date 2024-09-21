@@ -102,34 +102,41 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     width: 40,
                   ),
-                  CustomInputField(
-                    controller: wtController,
-                    labelText: 'Weight',
+                  SizedBox(
+                    width: 60,
+                    child: CustomInputField(
+
+                      controller: wtController,
+                      labelText: 'Weight',
+                    ),
                   ),
                   SizedBox(
                     width: 50,
                   ),
-                  IconButton(
-                      onPressed: () {
-                        FocusScope.of(context).unfocus();
-                        double? ft = double.tryParse(ftController.text)??0;
-                        double? inch = double.tryParse(inchController.text)??0;
-                        double? wt = double.tryParse(wtController.text)??0;
-                        double? meter = (ft * 12 + inch) * 0.0254;
-                        ans = wt / (meter*meter);
+                  SizedBox(
+                    width: 95,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          FocusScope.of(context).unfocus();
+                          double? ft = double.tryParse(ftController.text)??0;
+                          double? inch = double.tryParse(inchController.text)??0;
+                          double? wt = double.tryParse(wtController.text)??0;
+                          double? meter = (ft * 12 + inch) * 0.0254;
+                          ans = wt / (meter*meter);
 
-                        setState(() {
+                          setState(() {
 
-                        });
+                          });
 
 
 
-                      },
-                      icon: Icon(
-                        Icons.arrow_circle_right,
-                        size: 30,
-                        color: Colors.red,
-                      )),
+                        },
+                      child: Text(
+                        'Result',
+                        style: TextStyle(fontSize: 16, color: Colors.red),
+                      ),
+                    ),
+                  ),
                 ],
               ),
 
