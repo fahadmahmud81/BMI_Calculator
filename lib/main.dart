@@ -63,32 +63,17 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SizedBox(
-                    width: 50,
-                    child: TextFormField(
-                      controller: ageController,
-                      decoration: InputDecoration(
-                        labelText: 'Age',
-                      ),
-                    ),
+                  CustomInputField(
+                    controller: ageController,
+                    labelText: 'Age',
                   ),
-                  SizedBox(
-                    width: 50,
-                    child: TextFormField(
-                      controller: ftController,
-                      decoration: InputDecoration(
-                        labelText: 'Ht(f)',
-                      ),
-                    ),
+                  CustomInputField(
+                    controller: ftController,
+                    labelText: 'Ht(f)',
                   ),
-                  SizedBox(
-                    width: 50,
-                    child: TextFormField(
-                      controller: inchController,
-                      decoration: InputDecoration(
-                        labelText: 'Ht(in)',
-                      ),
-                    ),
+                  CustomInputField(
+                    controller: inchController,
+                    labelText: 'Ht(in)',
                   ),
                 ],
               ),
@@ -117,20 +102,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     width: 40,
                   ),
-                  SizedBox(
-                    width: 70,
-                    child: TextFormField(
-                      controller: wtController,
-                      decoration: InputDecoration(
-                        labelText: 'Weight',
-                      ),
-                    ),
+                  CustomInputField(
+                    controller: wtController,
+                    labelText: 'Weight',
                   ),
                   SizedBox(
                     width: 50,
                   ),
                   IconButton(
                       onPressed: () {
+                        FocusScope.of(context).unfocus();
                         double? ft = double.tryParse(ftController.text)??0;
                         double? inch = double.tryParse(inchController.text)??0;
                         double? wt = double.tryParse(wtController.text)??0;
@@ -439,3 +420,24 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
 }
+
+class CustomInputField extends StatelessWidget {
+  final TextEditingController controller;
+  final String labelText;
+
+  const CustomInputField({required this.controller, required this.labelText});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 50,
+      child: TextFormField(
+        controller: controller,
+        decoration: InputDecoration(
+          labelText: labelText,
+        ),
+      ),
+    );
+  }
+}
+
