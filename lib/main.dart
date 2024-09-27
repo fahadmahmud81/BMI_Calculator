@@ -46,11 +46,17 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.add)),
           IconButton(onPressed: () {
-            ageController.clear();
-            ftController.clear();
-            inchController.clear();
-            wtController.clear();
-            ans=0;
+
+            setState(() {
+              ageController.clear();
+              ftController.clear();
+              inchController.clear();
+              wtController.clear();
+              ans=0;
+            });
+
+
+
 
           }, icon: Icon(Icons.refresh)),
         ],
@@ -65,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   CustomInputField(
                     controller: ageController,
+
                     labelText: 'Age',
                   ),
                   CustomInputField(
@@ -107,6 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: CustomInputField(
 
                       controller: wtController,
+
                       labelText: 'Weight',
                     ),
                   ),
@@ -142,6 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
               SizedBox(
                 width: 300,
+
                 child: SfRadialGauge(
 
                     axes: <RadialAxis>[
@@ -177,6 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             positionFactor: 0.5)
                       ])
                     ]),
+
               ),
 
 
@@ -440,6 +450,7 @@ class CustomInputField extends StatelessWidget {
       width: 50,
       child: TextFormField(
         controller: controller,
+        keyboardType: TextInputType.number,
         decoration: InputDecoration(
           labelText: labelText,
         ),
