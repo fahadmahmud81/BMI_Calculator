@@ -1,16 +1,26 @@
 # BMI Calculator
 
-A new Flutter project.
+This is a simple Body Mass Index (BMI) Calculator app built using Flutter. It allows users to calculate their BMI based on height and weight inputs. The app provides results that help users understand if they are underweight, normal weight, overweight, or obese based on their BMI score.
 
-## Getting Started
+## Features
+- User-Friendly Interface: Clean and responsive design, making it easy to input values and get results quickly.
+- Real-Time BMI Calculation: Users can enter their weight (kg) and height (cm or m) to calculate their BMI instantly.
+- BMI Categorization: After calculating the BMI, the app provides a message indicating the user's weight status (Underweight, Normal, Overweight, or Obese).
+- Platform Compatibility: Works on both Android and iOS devices.
+- Flutter Framework: Developed using Flutter for fast and cross-platform app development.
 
-This project is a starting point for a Flutter application.
+## Screenshots
+![2024-09-27_11-50](https://github.com/user-attachments/assets/110bcaa8-4ba0-4278-bbd9-9bc0154a4715)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+ How to Use
+1. Input your weight: Enter your weight in kilograms.
+2. Input your height: Enter your height in ft and inch.
+3. Tap Result: Press the "Result" button to get your BMI score.
+4. View Results: Based on the BMI score, the app will show your weight category and give a brief health suggestion.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ Technologies Used
+Flutter: For building the cross-platform mobile app.
+Dart: The programming language used for Flutter development.
+
+ 
